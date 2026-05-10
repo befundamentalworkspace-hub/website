@@ -1,0 +1,34 @@
+User-agent: *
+Allow: /
+
+# Block private/admin routes
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/login
+Disallow: /admin/unauthorized
+Disallow: /admin/dashboard
+Disallow: /admin/audit-requests
+Disallow: /admin/blog
+Disallow: /admin/blog/
+Disallow: /dashboard
+Disallow: /dashboard/
+Disallow: /login
+Disallow: /cms
+Disallow: /cms/
+Disallow: /client
+Disallow: /client/
+Disallow: /employee
+Disallow: /employee/
+Disallow: /settings
+Disallow: /profile
+
+# Allow public pages
+Allow: /about
+Allow: /services
+Allow: /results
+Allow: /blog
+Allow: /blog/
+Allow: /our-clients
+Allow: /request-audit
+
+Sitemap: https://website-navy-alpha-71.vercel.app/sitemap.xml
