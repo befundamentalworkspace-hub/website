@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
+import SEO from "../components/SEO.jsx";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -34,6 +35,13 @@ export default function AdminLogin() {
   }
 
   return (
+    <>
+      <SEO
+        title="Admin Login | Fundamental.co"
+        description="Log in to the Fundamental.co Admin Dashboard to manage audit requests, blog posts, and more."
+        path="/admin/login"
+        noindex={true}
+      />
     <main className="min-h-screen bg-black px-6 py-10 text-white md:px-10 lg:px-16">
       <section className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
@@ -128,5 +136,6 @@ export default function AdminLogin() {
         </div>
       </section>
     </main>
+    </>
   );
 }

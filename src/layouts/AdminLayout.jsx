@@ -1,5 +1,6 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
+import SEO from "../components/SEO.jsx"; 
 
 const navItems = [
   {
@@ -25,6 +26,16 @@ export default function AdminLayout() {
   }
 
   return (
+    <>
+      <SEO
+        title="Admin Dashboard | Fundamental.co"
+        description="Manage audit requests, blog posts, and more in the Fundamental.co Admin Dashboard."
+        path="/admin"
+        noindex={true}
+      />
+    
+    
+    
     <main className="min-h-screen bg-black text-white">
       <div className="grid min-h-screen lg:grid-cols-[280px_1fr]">
         <aside className="border-b border-white/10 bg-black px-6 py-5 lg:border-b-0 lg:border-r lg:px-6 lg:py-8">
@@ -100,5 +111,6 @@ export default function AdminLayout() {
         </section>
       </div>
     </main>
+    </>
   );
 }

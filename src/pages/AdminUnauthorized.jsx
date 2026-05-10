@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
+import SEO from "../components/SEO.jsx";
 
 export default function AdminUnauthorized() {
   const navigate = useNavigate();
@@ -10,6 +11,13 @@ export default function AdminUnauthorized() {
   }
 
   return (
+    <>
+      <SEO
+        title="Admin Access Denied | Fundamental.co"
+        description="Your login is valid, but this email does not have access to the Fundamental.co Admin Dashboard."
+        path="/admin/unauthorized"
+        noindex={true}
+      />
     <main className="flex min-h-screen items-center justify-center bg-black px-6 py-10 text-white">
       <section className="w-full max-w-3xl rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 text-center md:p-12">
         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/35">
@@ -62,5 +70,6 @@ export default function AdminUnauthorized() {
         </div>
       </section>
     </main>
+    </>
   );
 }
