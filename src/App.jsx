@@ -10,6 +10,11 @@ import Blog from "./pages/Blog.jsx";
 import BlogPost from "./pages/BlogPost.jsx";
 import OurClients from "./pages/OurClients.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import SocialMediaMarketing from "./pages/services/SocialMediaMarketing.jsx";
+import SEOService from "./pages/services/SEOService.jsx";
+import WebsiteDevelopment from "./pages/services/WebsiteDevelopment.jsx";
+import PerformanceMarketing from "./pages/services/PerformanceMarketing.jsx";
+import PipelineOptimization from "./pages/services/PipelineOptimization.jsx";
 
 import AdminLogin from "./pages/AdminLogin.jsx";
 import AdminUnauthorized from "./pages/AdminUnauthorized.jsx";
@@ -37,6 +42,11 @@ export default function App() {
           <Route path="/our-clients" element={<OurClients />} />
           <Route path="/request-audit" element={<RequestAudit />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/services/social-media-marketing" element={<SocialMediaMarketing />} />
+          <Route path="/services/seo" element={<SEOService />} />
+          <Route path="/services/website-development" element={<WebsiteDevelopment />} />
+          <Route path="/services/performance-marketing" element={<PerformanceMarketing />} />
+        <Route path="/services/pipeline-optimization" element={<PipelineOptimization />} />
         </Route>
 
         {/* Admin login */}
