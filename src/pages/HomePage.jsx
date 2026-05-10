@@ -9,28 +9,36 @@ import FounderBeliefSection from "../components/homepage/FounderBeliefSection";
 import FinalCTASection from "../components/homepage/FinalCTASection";
 import Footer from "../components/homepage/Footer";
 import BackgroundTexture from "../components/homepage/BackgroundTexture";
+import SEO from "../components/SEO.jsx";
 
 export default function HomePage() {
   return (
-    <main id="top" className="relative min-h-screen bg-black text-white">
-      <BackgroundTexture />
+    <>
+      <SEO
+        title="Fundamental.co | Marketing Agency for Doctors & Clinics in India"
+        description="Fundamental.co helps doctor-led clinics turn visibility into trusted consultations through SEO, websites, performance marketing, and conversion systems."
+        path="/"
+      />
 
-      <div className="relative z-10">
-        <Navbar />
-        <HeroSection />
-        <ProblemSection />
+      <main id="top" className="relative min-h-screen bg-black text-white">
+        <BackgroundTexture />
 
-        <div id="pipeline" className="scroll-mt-24" />
+        <div className="relative z-10">
+          <Navbar />
+          <HeroSection />
+          <ProblemSection />
 
-        <PipelineSection />
+          <div id="pipeline" className="scroll-mt-24" />
 
-        <ServicesSection />
-        <BeforeAfterSection />
-        <AuditCTASection />
-        <FounderBeliefSection />
-        <FinalCTASection />
-        <Footer />
-      </div>
-    </main>
+          <PipelineSection />
+          <ServicesSection />
+          <BeforeAfterSection />
+          <AuditCTASection />
+          <FounderBeliefSection />
+          <FinalCTASection />
+          <Footer />
+        </div>
+      </main>
+    </>
   );
 }

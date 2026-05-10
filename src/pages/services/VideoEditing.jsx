@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO.jsx";
 
 const serviceLinks = [
   {
@@ -61,6 +62,11 @@ const faqs = [
 ];
 
 export default function VideoEditing() {
+  <SEO
+    title="Video Editing for Doctors| Fundamental.co"
+    description="Professional video editing services for doctors, clinics, and healthcare businesses in Lucknow and across India."
+    path="/services/video-editing"
+  />
   return (
     <main className="relative min-h-screen bg-black text-white">
       <BackgroundTexture />

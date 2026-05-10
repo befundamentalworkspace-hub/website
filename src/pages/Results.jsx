@@ -1,5 +1,13 @@
+import SEO from "../components/SEO.jsx";
+
 export default function Results() {
   return (
+    <>
+      <SEO
+        title="Results | Clinic Marketing Case Studies & Growth Systems"
+        description="Explore how Fundamental.co diagnoses clinic marketing leaks and builds systems that improve trust, enquiries, consultations, and conversion."
+        path="/results"
+      />
     <section className="px-6 py-24 md:px-10 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/40">
@@ -16,5 +24,6 @@ export default function Results() {
         </p>
       </div>
     </section>
+  </>
   );
 }

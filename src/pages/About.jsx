@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO.jsx";
 import founderHero from "../assets/founder-hero.png";
 import doctorHero from "../assets/doctor-hero.png";
 import founderAbout from "../assets/founder-about.png";
@@ -122,7 +123,14 @@ function TeamImage({ step }) {
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <>
+      <SEO
+        title="About Fundamental.co | Marketing Systems for Doctor-Led Clinics"
+        description="Learn why Fundamental.co was built to help doctor-led clinics become trusted, differentiated, and chosen before the consultation."
+        path="/about"
+      />
+
+      <main className="min-h-screen bg-black text-white">
       {/* HERO / OPENING BELIEF */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 lg:px-12 lg:py-32">
@@ -398,5 +406,6 @@ export default function About() {
         </div>
       </section>
     </main>
+    </>
   );
 }

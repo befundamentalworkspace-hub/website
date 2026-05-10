@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO.jsx";
 
 const serviceLinks = [
   {
@@ -67,6 +68,11 @@ const faqs = [
 ];
 
 export default function PerformanceMarketing() {
+  <SEO
+    title="Performance Marketing for Doctors| Fundamental.co"
+    description="| Fundamental.co Paid advertising and retargeting systems for clinics that want better patient quality, not just more leads."
+    path="/services/performance-marketing"
+  />
   return (
     <main className="relative min-h-screen bg-black text-white">
       <BackgroundTexture />

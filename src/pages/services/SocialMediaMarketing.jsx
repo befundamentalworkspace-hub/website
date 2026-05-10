@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO.jsx";
 
 const serviceLinks = [
   {
@@ -66,7 +67,15 @@ const faqs = [
   },
 ];
 
-export default function SocialMediaMarketing() {
+export default function SocialMediaMarketing()
+ {
+  <>
+    <SEO
+      title="Social Media Marketing for Doctors| Fundamental.co"
+      description="Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue."
+      path="/services/social-media-marketing"
+    />
+  </>
   return (
     <main className="relative min-h-screen bg-black text-white">
       <BackgroundTexture />

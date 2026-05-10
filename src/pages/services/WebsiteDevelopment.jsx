@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO.jsx"; 
 
 const serviceLinks = [
   {
@@ -67,7 +68,15 @@ const faqs = [
   },
 ];
 
-export default function WebsiteDevelopment() {
+export default function WebsiteDevelopment()
+ {
+  <>
+    <SEO
+      title="Website Development for Doctors| Fundamental.co"
+      description="Premium clinic websites built to convert patient attention into trusted enquiries and consultation requests."
+      path="/services/website-development"
+    />
+  </>
   return (
     <main className="relative min-h-screen bg-black text-white">
       <BackgroundTexture />

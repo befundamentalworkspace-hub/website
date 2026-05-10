@@ -2,8 +2,17 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Calendar, Search } from "lucide-react";
 import { supabase } from "../lib/supabaseClient";
+import SEO from "../components/SEO.jsx";
 
 export default function Blog() {
+  <>
+    <SEO
+      title="Blog || Doctor Marketing, Clinic SEO & Patient Acquisition"
+      description="Read Fundamental.co insights on doctor marketing, clinic SEO, patient acquisition, trust-building, and conversion systems."
+      path="/blog"
+    />
+  </>
+  
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");

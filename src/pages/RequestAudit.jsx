@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import RequestAuditFAQ from "../components/RequestAuditFAQ.jsx";
+import SEO from "../components/SEO.jsx";
 
 const auditFocusOptions = [
   "Low-quality enquiries",
@@ -22,7 +23,15 @@ const budgetOptions = [
 
 const contactOptions = ["WhatsApp", "Phone call", "Email", "Google Meet"];
 
-export default function RequestAudit() {
+export default function RequestAudit()
+ {
+  <>
+    <SEO
+      title="Request a Pipeline Audit | Fundamental.co"
+      description="Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue."
+      path="/request-audit"
+    />
+  </>
   const [formData, setFormData] = useState({
     name: "",
     clinicName: "",

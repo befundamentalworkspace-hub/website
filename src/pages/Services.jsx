@@ -4,9 +4,16 @@ import VerticalPipelineExperience from "../components/services/VerticalPipelineE
 import PipelineOffer from "../components/services/PipelineOffer.jsx";
 import ServicesFAQ from "../components/services/ServicesFAQ.jsx";
 import ServicesCTA from "../components/services/ServicesCTA.jsx";
+import SEO from "../components/SEO.jsx";
 
 export default function Services() {
   return (
+    <>
+      <SEO
+        title="Our Services | Fundamental.co"
+        description="Explore our specialized services designed to help doctor-led clinics in India increase visibility, build trust, and convert consultations. From SEO and website development to performance marketing and pipeline optimization, we offer comprehensive solutions tailored for the healthcare industry."
+        path="/services"
+      />
     <main className="relative min-h-screen bg-black text-white">
       <BackgroundTexture />
 
@@ -19,6 +26,7 @@ export default function Services() {
         <ServicesCTA />
       </div>
     </main>
+    </>
   );
 }
 

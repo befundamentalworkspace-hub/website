@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO.jsx";
 
 const serviceLinks = [
   {
@@ -67,6 +68,11 @@ const faqs = [
 ];
 
 export default function PipelineOptimization() {
+  <SEO
+    title="Clinic Pipeline Optimization| Fundamental.co"
+    description="Diagnose and fix the stages where clinics lose enquiries, follow-up, consultations, and revenue."
+    path="/services/pipeline-optimization"
+  />
   return (
     <main className="relative min-h-screen bg-black text-white">
       <BackgroundTexture />
