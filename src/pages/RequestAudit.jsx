@@ -24,16 +24,7 @@ const budgetOptions = [
 
 const contactOptions = ["WhatsApp", "Phone call", "Email", "Google Meet"];
 
-export default function RequestAudit()
- {
-  <>
-    <SEO
-      title="Request a Pipeline Audit | Fundamental.co"
-      description="Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue."
-      path="/request-audit"
-      schema={[requestAuditSchema, faqSchema]}
-    />
-  </>
+export default function RequestAudit() {
   const [formData, setFormData] = useState({
     name: "",
     clinicName: "",
@@ -51,6 +42,72 @@ export default function RequestAudit()
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+
+  const requestAuditFaqs = [
+    {
+      question: "What happens after I request a pipeline audit?",
+      answer:
+        "Fundamental.co reviews your clinic, website, Instagram, enquiry flow, and visible marketing assets to identify where attention, trust, enquiries, follow-up, or consultations may be leaking.",
+    },
+    {
+      question: "Is the pipeline audit free?",
+      answer:
+        "The initial audit request is free. If your clinic is a fit, Fundamental.co may recommend a deeper strategy or implementation plan after reviewing your submission.",
+    },
+    {
+      question: "Who is this audit for?",
+      answer:
+        "The audit is for doctor-led clinics, aesthetic clinics, hospitals, and healthcare businesses that want to improve patient trust, enquiry quality, consultation bookings, and conversion.",
+    },
+    {
+      question: "Do I need to already be running ads?",
+      answer:
+        "No. The audit can review your current website, social media, SEO presence, enquiry flow, or paid advertising if you already have campaigns running.",
+    },
+    {
+      question: "Will you review my website and Instagram?",
+      answer:
+        "Yes. If you provide your website and Instagram links, Fundamental.co can review how well they build trust, explain your positioning, and move patients toward enquiry.",
+    },
+    {
+      question: "How soon will I hear back?",
+      answer:
+        "After submitting the audit request, the team reviews your details and follows up through your preferred contact method.",
+    },
+  ];
+
+  const requestAuditSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Request a Pipeline Audit",
+    url: "https://website-navy-alpha-71.vercel.app/request-audit",
+    description:
+      "Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue.",
+    mainEntity: {
+      "@type": "Service",
+      name: "Clinic Pipeline Audit",
+      serviceType: "Marketing Funnel and Conversion Audit for Clinics",
+      provider: {
+        "@type": "Organization",
+        name: "Fundamental.co",
+        url: "https://website-navy-alpha-71.vercel.app/",
+        email: "befundamentalworkspace@gmail.com",
+        telephone: "+91-90828211893",
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+      audience: {
+        "@type": "Audience",
+        audienceType: "Doctor-led clinics and healthcare businesses",
+      },
+      description:
+        "A pipeline audit that identifies where a clinic is losing attention, trust, enquiries, follow-up, consultations, and revenue.",
+    },
+  };
+
+  const faqSchema = createFAQSchema(requestAuditFaqs);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -119,336 +176,278 @@ export default function RequestAudit()
     });
   }
 
-  const requestAuditFaqs = [
-  {
-    question: "What happens after I request a pipeline audit?",
-    answer:
-      "Fundamental.co reviews your clinic, website, Instagram, enquiry flow, and visible marketing assets to identify where attention, trust, enquiries, follow-up, or consultations may be leaking.",
-  },
-  {
-    question: "Is the pipeline audit free?",
-    answer:
-      "The initial audit request is free. If your clinic is a fit, Fundamental.co may recommend a deeper strategy or implementation plan after reviewing your submission.",
-  },
-  {
-    question: "Who is this audit for?",
-    answer:
-      "The audit is for doctor-led clinics, aesthetic clinics, hospitals, and healthcare businesses that want to improve patient trust, enquiry quality, consultation bookings, and conversion.",
-  },
-  {
-    question: "Do I need to already be running ads?",
-    answer:
-      "No. The audit can review your current website, social media, SEO presence, enquiry flow, or paid advertising if you already have campaigns running.",
-  },
-  {
-    question: "Will you review my website and Instagram?",
-    answer:
-      "Yes. If you provide your website and Instagram links, Fundamental.co can review how well they build trust, explain your positioning, and move patients toward enquiry.",
-  },
-  {
-    question: "How soon will I hear back?",
-    answer:
-      "After submitting the audit request, the team reviews your details and follows up through your preferred contact method.",
-  },
-];
-
-const requestAuditSchema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  name: "Request a Pipeline Audit",
-  url: "https://website-navy-alpha-71.vercel.app/request-audit",
-  description:
-    "Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue.",
-  mainEntity: {
-    "@type": "Service",
-    name: "Clinic Pipeline Audit",
-    serviceType: "Marketing Funnel and Conversion Audit for Clinics",
-    provider: {
-      "@type": "Organization",
-      name: "Fundamental.co",
-      url: "https://website-navy-alpha-71.vercel.app/",
-      email: "befundamentalworkspace@gmail.com",
-      telephone: "+91-90828211893",
-    },
-    areaServed: {
-      "@type": "Country",
-      name: "India",
-    },
-    audience: {
-      "@type": "Audience",
-      audienceType: "Doctor-led clinics and healthcare businesses",
-    },
-    description:
-      "A pipeline audit that identifies where a clinic is losing attention, trust, enquiries, follow-up, consultations, and revenue.",
-  },
-};
-
-const faqSchema = createFAQSchema(requestAuditFaqs);
-
-
   return (
-    <main className="min-h-screen bg-black text-white">
-      <section className="border-b border-white/10 px-6 py-24 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
-          {/* Left Side */}
-          <div className="flex h-full flex-col">
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
-              Request Audit
-            </p>
+    <>
+      <SEO
+        title="Request a Pipeline Audit | Fundamental.co"
+        description="Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue."
+        path="/request-audit"
+        schema={[requestAuditSchema, faqSchema]}
+      />
 
-            <h1 className="max-w-3xl text-5xl font-semibold uppercase leading-[0.9] tracking-[-0.06em] md:text-7xl lg:text-8xl">
-              Find where your clinic funnel is leaking.
-            </h1>
+      <main className="min-h-screen bg-black text-white">
+        <section className="border-b border-white/10 px-6 py-24 md:px-10 lg:px-16">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
+            {/* Left Side */}
+            <div className="flex h-full flex-col">
+              <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
+                Request Audit
+              </p>
 
-            <p className="mt-8 max-w-xl text-base leading-7 text-white/60 md:text-lg">
-              Most clinics do not need more random marketing. They need to know
-              which part of the patient journey is failing: attention, trust,
-              enquiry, follow-up, consultation, or conversion.
-            </p>
+              <h1 className="max-w-3xl text-5xl font-semibold uppercase leading-[0.9] tracking-[-0.06em] md:text-7xl lg:text-8xl">
+                Find where your clinic funnel is leaking.
+              </h1>
 
-            <div className="mt-10 space-y-6">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="premium-card flex min-h-[140px] flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                  <p className="text-xs uppercase tracking-[0.25em] text-white/40">
-                    Audit checks
-                  </p>
+              <p className="mt-8 max-w-xl text-base leading-7 text-white/60 md:text-lg">
+                Most clinics do not need more random marketing. They need to
+                know which part of the patient journey is failing: attention,
+                trust, enquiry, follow-up, consultation, or conversion.
+              </p>
 
-                  <p className="mt-4 text-2xl font-semibold tracking-[-0.04em]">
-                    Pipeline leakage
+              <div className="mt-10 space-y-6">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="premium-card flex min-h-[140px] flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                    <p className="text-xs uppercase tracking-[0.25em] text-white/40">
+                      Audit checks
+                    </p>
+
+                    <p className="mt-4 text-2xl font-semibold tracking-[-0.04em]">
+                      Pipeline leakage
+                    </p>
+                  </div>
+
+                  <div className="premium-card flex min-h-[140px] flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                    <p className="text-xs uppercase tracking-[0.25em] text-white/40">
+                      Output
+                    </p>
+
+                    <p className="mt-4 text-2xl font-semibold tracking-[-0.04em]">
+                      Clear next fixes
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                  <p className="text-sm leading-7 text-white/55">
+                    This page is designed to convert qualified clinic owners and
+                    doctors into Pipeline Audit requests, instead of using a
+                    generic contact form.
                   </p>
                 </div>
 
-                <div className="premium-card flex min-h-[140px] flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                  <p className="text-xs uppercase tracking-[0.25em] text-white/40">
-                    Output
+                <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/35">
+                    What we look for
                   </p>
 
-                  <p className="mt-4 text-2xl font-semibold tracking-[-0.04em]">
-                    Clear next fixes
-                  </p>
-                </div>
-              </div>
+                  <div className="mt-5 space-y-4">
+                    <AuditPoint
+                      number="01"
+                      title="Attention"
+                      text="Are the right people noticing the clinic for the right reason?"
+                    />
 
-              <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                <p className="text-sm leading-7 text-white/55">
-                  This page is designed to convert qualified clinic owners and
-                  doctors into Pipeline Audit requests, instead of using a
-                  generic contact form.
-                </p>
-              </div>
+                    <AuditPoint
+                      number="02"
+                      title="Trust"
+                      text="Does the clinic look credible before the patient enquires?"
+                    />
 
-              <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/35">
-                  What we look for
-                </p>
+                    <AuditPoint
+                      number="03"
+                      title="Enquiry"
+                      text="Is the next step clear, specific, and low-friction?"
+                    />
 
-                <div className="mt-5 space-y-4">
-                  <AuditPoint
-                    number="01"
-                    title="Attention"
-                    text="Are the right people noticing the clinic for the right reason?"
-                  />
-
-                  <AuditPoint
-                    number="02"
-                    title="Trust"
-                    text="Does the clinic look credible before the patient enquires?"
-                  />
-
-                  <AuditPoint
-                    number="03"
-                    title="Enquiry"
-                    text="Is the next step clear, specific, and low-friction?"
-                  />
-
-                  <AuditPoint
-                    number="04"
-                    title="Follow-up"
-                    text="Are serious leads being guided before they go cold?"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side */}
-          <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.03] p-5 md:p-8">
-            {!submitted ? (
-              <form onSubmit={handleSubmit} className="flex h-full flex-col">
-                <div className="space-y-8">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-                      Clinic Details
-                    </p>
-
-                    <div className="mt-6 grid gap-5 md:grid-cols-2">
-                      <Field
-                        label="Your name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-
-                      <Field
-                        label="Clinic name"
-                        name="clinicName"
-                        value={formData.clinicName}
-                        onChange={handleChange}
-                        required
-                      />
-
-                      <Field
-                        label="City"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleChange}
-                        required
-                      />
-
-                      <Field
-                        label="Specialty"
-                        name="specialty"
-                        value={formData.specialty}
-                        onChange={handleChange}
-                        placeholder="Aesthetic, dental, dermatology, ortho..."
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-                      Online Presence
-                    </p>
-
-                    <div className="mt-6 grid gap-5 md:grid-cols-2">
-                      <Field
-                        label="Website link"
-                        name="website"
-                        value={formData.website}
-                        onChange={handleChange}
-                        placeholder="https://..."
-                      />
-
-                      <Field
-                        label="Instagram link"
-                        name="instagram"
-                        value={formData.instagram}
-                        onChange={handleChange}
-                        placeholder="https://instagram.com/..."
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-                      Funnel Problem
-                    </p>
-
-                    <div className="mt-6 grid gap-5 md:grid-cols-2">
-                      <Field
-                        label="Monthly enquiry volume"
-                        name="monthlyEnquiries"
-                        value={formData.monthlyEnquiries}
-                        onChange={handleChange}
-                        placeholder="Example: 50–100 enquiries"
-                      />
-
-                      <SelectField
-                        label="Main problem"
-                        name="mainProblem"
-                        value={formData.mainProblem}
-                        onChange={handleChange}
-                        options={auditFocusOptions}
-                        required
-                      />
-
-                      <SelectField
-                        label="Budget range"
-                        name="budgetRange"
-                        value={formData.budgetRange}
-                        onChange={handleChange}
-                        options={budgetOptions}
-                      />
-
-                      <SelectField
-                        label="Preferred contact method"
-                        name="preferredContact"
-                        value={formData.preferredContact}
-                        onChange={handleChange}
-                        options={contactOptions}
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-white/70">
-                      Anything specific we should look at?
-                    </label>
-
-                    <textarea
-                      name="notes"
-                      value={formData.notes}
-                      onChange={handleChange}
-                      rows="5"
-                      placeholder="Tell us what is currently not working..."
-                      className="mt-3 w-full resize-none rounded-2xl border border-white/10 bg-black px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-white/35"
+                    <AuditPoint
+                      number="04"
+                      title="Follow-up"
+                      text="Are serious leads being guided before they go cold?"
                     />
                   </div>
                 </div>
-
-                {submitError && (
-                  <div className="mt-6 rounded-2xl border border-red-500/30 bg-red-500/10 p-4">
-                    <p className="text-sm text-red-200">{submitError}</p>
-                  </div>
-                )}
-
-                <div className="mt-10">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full rounded-full bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-black transition hover:bg-white/85 disabled:cursor-not-allowed disabled:opacity-60"
-                  >
-                    {isSubmitting ? "Submitting..." : "Request My Audit"}
-                  </button>
-
-                  <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-5 text-white/35">
-                    Fundamental.co reviews the submitted details to understand
-                    where your attention-to-conversion journey may be leaking.
-                  </p>
-                </div>
-              </form>
-            ) : (
-              <div className="flex min-h-[560px] flex-col items-center justify-center text-center">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
-                  Request Received
-                </p>
-
-                <h2 className="mt-6 max-w-xl text-4xl font-semibold uppercase leading-[0.95] tracking-[-0.05em] md:text-6xl">
-                  We will review your clinic pipeline.
-                </h2>
-
-                <p className="mt-6 max-w-lg text-base leading-7 text-white/55">
-                  Your audit request has been saved. Check the Supabase
-                  request_audits table to confirm the new row.
-                </p>
-
-                <button
-                  type="button"
-                  onClick={resetForm}
-                  className="mt-10 rounded-full border border-white/15 px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:border-white/35 hover:bg-white/10"
-                >
-                  Submit Another Request
-                </button>
               </div>
-            )}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      <RequestAuditFAQ />
-    </main>
+            {/* Right Side */}
+            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.03] p-5 md:p-8">
+              {!submitted ? (
+                <form onSubmit={handleSubmit} className="flex h-full flex-col">
+                  <div className="space-y-8">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+                        Clinic Details
+                      </p>
+
+                      <div className="mt-6 grid gap-5 md:grid-cols-2">
+                        <Field
+                          label="Your name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                        />
+
+                        <Field
+                          label="Clinic name"
+                          name="clinicName"
+                          value={formData.clinicName}
+                          onChange={handleChange}
+                          required
+                        />
+
+                        <Field
+                          label="City"
+                          name="city"
+                          value={formData.city}
+                          onChange={handleChange}
+                          required
+                        />
+
+                        <Field
+                          label="Specialty"
+                          name="specialty"
+                          value={formData.specialty}
+                          onChange={handleChange}
+                          placeholder="Aesthetic, dental, dermatology, ortho..."
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+                        Online Presence
+                      </p>
+
+                      <div className="mt-6 grid gap-5 md:grid-cols-2">
+                        <Field
+                          label="Website link"
+                          name="website"
+                          value={formData.website}
+                          onChange={handleChange}
+                          placeholder="https://..."
+                        />
+
+                        <Field
+                          label="Instagram link"
+                          name="instagram"
+                          value={formData.instagram}
+                          onChange={handleChange}
+                          placeholder="https://instagram.com/..."
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+                        Funnel Problem
+                      </p>
+
+                      <div className="mt-6 grid gap-5 md:grid-cols-2">
+                        <Field
+                          label="Monthly enquiry volume"
+                          name="monthlyEnquiries"
+                          value={formData.monthlyEnquiries}
+                          onChange={handleChange}
+                          placeholder="Example: 50–100 enquiries"
+                        />
+
+                        <SelectField
+                          label="Main problem"
+                          name="mainProblem"
+                          value={formData.mainProblem}
+                          onChange={handleChange}
+                          options={auditFocusOptions}
+                          required
+                        />
+
+                        <SelectField
+                          label="Budget range"
+                          name="budgetRange"
+                          value={formData.budgetRange}
+                          onChange={handleChange}
+                          options={budgetOptions}
+                        />
+
+                        <SelectField
+                          label="Preferred contact method"
+                          name="preferredContact"
+                          value={formData.preferredContact}
+                          onChange={handleChange}
+                          options={contactOptions}
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-white/70">
+                        Anything specific we should look at?
+                      </label>
+
+                      <textarea
+                        name="notes"
+                        value={formData.notes}
+                        onChange={handleChange}
+                        rows="5"
+                        placeholder="Tell us what is currently not working..."
+                        className="mt-3 w-full resize-none rounded-2xl border border-white/10 bg-black px-4 py-4 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-white/35"
+                      />
+                    </div>
+                  </div>
+
+                  {submitError && (
+                    <div className="mt-6 rounded-2xl border border-red-500/30 bg-red-500/10 p-4">
+                      <p className="text-sm text-red-200">{submitError}</p>
+                    </div>
+                  )}
+
+                  <div className="mt-10">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full rounded-full bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-black transition hover:bg-white/85 disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {isSubmitting ? "Submitting..." : "Request My Audit"}
+                    </button>
+
+                    <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-5 text-white/35">
+                      Fundamental.co reviews the submitted details to understand
+                      where your attention-to-conversion journey may be leaking.
+                    </p>
+                  </div>
+                </form>
+              ) : (
+                <div className="flex min-h-[560px] flex-col items-center justify-center text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">
+                    Request Received
+                  </p>
+
+                  <h2 className="mt-6 max-w-xl text-4xl font-semibold uppercase leading-[0.95] tracking-[-0.05em] md:text-6xl">
+                    We will review your clinic pipeline.
+                  </h2>
+
+                  <p className="mt-6 max-w-lg text-base leading-7 text-white/55">
+                    Your audit request has been saved. Check the Supabase
+                    request_audits table to confirm the new row.
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={resetForm}
+                    className="mt-10 rounded-full border border-white/15 px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:border-white/35 hover:bg-white/10"
+                  >
+                    Submit Another Request
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        <RequestAuditFAQ />
+      </main>
+    </>
   );
 }
 
