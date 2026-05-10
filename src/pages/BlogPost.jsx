@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import SEO from "../components/SEO.jsx";
 import { supabase } from "../lib/supabaseClient";
 
 export default function BlogPost() {
@@ -18,6 +19,39 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true);
   const [relatedLoading, setRelatedLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  const blogPostSchema = post
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.seo_title || post.title,
+      description:
+        post.seo_description ||
+        post.excerpt ||
+        "Read Fundamental.co insights on doctor marketing, clinic SEO, patient acquisition, and conversion systems.",
+      image:
+        post.featured_image_url ||
+        "https://website-navy-alpha-71.vercel.app/fundamental-og-image.png",
+      author: {
+        "@type": "Organization",
+        name: post.author || "Fundamental.co",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Fundamental.co",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://website-navy-alpha-71.vercel.app/fundamental-mark.png",
+        },
+      },
+      datePublished: post.published_at || post.created_at,
+      dateModified: post.updated_at || post.published_at || post.created_at,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://website-navy-alpha-71.vercel.app/blog/${post.slug}`,
+      },
+    }
+  : null;
 
   useEffect(() => {
     async function fetchPost() {
@@ -174,6 +208,23 @@ export default function BlogPost() {
 
   return (
     <main className="min-h-screen bg-black text-white">
+      {post && (
+        <SEO
+          title={post.seo_title || `${post.title} | Fundamental.co`}
+          description={
+            post.seo_description ||
+            post.excerpt ||
+            "Read Fundamental.co insights on doctor marketing, clinic SEO, patient acquisition, and conversion systems."
+          }
+          path={`/blog/${post.slug}`}
+          image={
+            post.featured_image_url ||
+            "https://website-navy-alpha-71.vercel.app/fundamental-og-image.png"
+          }
+          type="article"
+          schema={blogPostSchema}
+        />
+      )}
       <article className="px-6 py-28">
         <div className="mx-auto max-w-4xl">
           <Link
@@ -308,6 +359,8 @@ function RelatedPostsSection({ posts, loading }) {
   }
 
   return (
+    
+    
     <section className="border-t border-white/10 px-6 py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
