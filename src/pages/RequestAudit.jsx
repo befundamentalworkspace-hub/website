@@ -2,6 +2,7 @@ import { useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import RequestAuditFAQ from "../components/RequestAuditFAQ.jsx";
 import SEO from "../components/SEO.jsx";
+import { createFAQSchema } from "../utils/faqSchema.js";
 
 const auditFocusOptions = [
   "Low-quality enquiries",
@@ -30,6 +31,7 @@ export default function RequestAudit()
       title="Request a Pipeline Audit | Fundamental.co"
       description="Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue."
       path="/request-audit"
+      schema={[requestAuditSchema, faqSchema]}
     />
   </>
   const [formData, setFormData] = useState({
@@ -116,6 +118,73 @@ export default function RequestAudit()
       notes: "",
     });
   }
+
+  const requestAuditFaqs = [
+  {
+    question: "What happens after I request a pipeline audit?",
+    answer:
+      "Fundamental.co reviews your clinic, website, Instagram, enquiry flow, and visible marketing assets to identify where attention, trust, enquiries, follow-up, or consultations may be leaking.",
+  },
+  {
+    question: "Is the pipeline audit free?",
+    answer:
+      "The initial audit request is free. If your clinic is a fit, Fundamental.co may recommend a deeper strategy or implementation plan after reviewing your submission.",
+  },
+  {
+    question: "Who is this audit for?",
+    answer:
+      "The audit is for doctor-led clinics, aesthetic clinics, hospitals, and healthcare businesses that want to improve patient trust, enquiry quality, consultation bookings, and conversion.",
+  },
+  {
+    question: "Do I need to already be running ads?",
+    answer:
+      "No. The audit can review your current website, social media, SEO presence, enquiry flow, or paid advertising if you already have campaigns running.",
+  },
+  {
+    question: "Will you review my website and Instagram?",
+    answer:
+      "Yes. If you provide your website and Instagram links, Fundamental.co can review how well they build trust, explain your positioning, and move patients toward enquiry.",
+  },
+  {
+    question: "How soon will I hear back?",
+    answer:
+      "After submitting the audit request, the team reviews your details and follows up through your preferred contact method.",
+  },
+];
+
+const requestAuditSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Request a Pipeline Audit",
+  url: "https://website-navy-alpha-71.vercel.app/request-audit",
+  description:
+    "Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue.",
+  mainEntity: {
+    "@type": "Service",
+    name: "Clinic Pipeline Audit",
+    serviceType: "Marketing Funnel and Conversion Audit for Clinics",
+    provider: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+      email: "befundamentalworkspace@gmail.com",
+      telephone: "+91-90828211893",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Doctor-led clinics and healthcare businesses",
+    },
+    description:
+      "A pipeline audit that identifies where a clinic is losing attention, trust, enquiries, follow-up, consultations, and revenue.",
+  },
+};
+
+const faqSchema = createFAQSchema(requestAuditFaqs);
+
 
   return (
     <main className="min-h-screen bg-black text-white">

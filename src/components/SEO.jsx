@@ -14,6 +14,12 @@ export default function SEO({
 }) {
   const canonicalUrl = `${SITE_URL}${path}`;
 
+  const schemaItems = schema
+    ? Array.isArray(schema)
+      ? schema
+      : [schema]
+    : [];
+
   return (
     <Helmet>
       <title>{title}</title>
@@ -26,6 +32,7 @@ export default function SEO({
 
       <link rel="canonical" href={canonicalUrl} />
 
+      {/* Open Graph */}
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Fundamental.co" />
       <meta property="og:title" content={title} />
@@ -33,16 +40,18 @@ export default function SEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={image} />
 
+      {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {/* Structured Data */}
+      {schemaItems.map((schemaItem, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schemaItem)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 }
