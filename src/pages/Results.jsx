@@ -7,6 +7,19 @@ export default function Results() {
         title="Results | Clinic Marketing Case Studies & Growth Systems"
         description="Explore how Fundamental.co diagnoses clinic marketing leaks and builds systems that improve trust, enquiries, consultations, and conversion."
         path="/results"
+        schema={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Clinic Marketing Results",
+    url: "https://website-navy-alpha-71.vercel.app/results",
+    description:
+      "Clinic marketing audits, case studies, and growth system examples from Fundamental.co.",
+    publisher: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+    },
+  }}
       />
     <section className="px-6 py-24 md:px-10 lg:px-12">
       <div className="mx-auto max-w-7xl">

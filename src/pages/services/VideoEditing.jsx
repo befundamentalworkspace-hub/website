@@ -66,6 +66,27 @@ export default function VideoEditing() {
     title="Video Editing for Doctors| Fundamental.co"
     description="Professional video editing services for doctors, clinics, and healthcare businesses in Lucknow and across India."
     path="/services/video-editing"
+    schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Video Editing For Doctors",
+    serviceType: "Video Editing for Doctors",
+    provider: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Doctors and clinics",
+    },
+    description:
+      "Diagnose and fix the stages where clinics lose enquiries, follow-up, consultations, and revenue.",
+  }}
   />
   return (
     <main className="relative min-h-screen bg-black text-white">

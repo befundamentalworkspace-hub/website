@@ -128,6 +128,26 @@ export default function About() {
         title="About Fundamental.co | Marketing Systems for Doctor-Led Clinics"
         description="Learn why Fundamental.co was built to help doctor-led clinics become trusted, differentiated, and chosen before the consultation."
         path="/about"
+        schema={{
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Fundamental.co",
+    url: "https://website-navy-alpha-71.vercel.app/about",
+    description:
+      "Fundamental.co was built to help doctor-led clinics become trusted, differentiated, and chosen before the consultation.",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+      logo: "https://website-navy-alpha-71.vercel.app/fundamental-mark.png",
+      founder: {
+        "@type": "Person",
+        name: "Vikas Pandey",
+      },
+      description:
+        "A marketing and conversion agency for doctor-led clinics in India.",
+    },
+  }}
       />
 
       <main className="min-h-screen bg-black text-white">

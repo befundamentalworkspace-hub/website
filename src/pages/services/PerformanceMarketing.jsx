@@ -72,6 +72,27 @@ export default function PerformanceMarketing() {
     title="Performance Marketing for Doctors| Fundamental.co"
     description="| Fundamental.co Paid advertising and retargeting systems for clinics that want better patient quality, not just more leads."
     path="/services/performance-marketing"
+    schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Performance Marketing for Doctors",
+    serviceType: "Healthcare Performance Marketing",
+    provider: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Doctors and clinics",
+    },
+    description:
+      "Paid advertising and retargeting systems for clinics that want better patient quality, not just more leads.",
+  }}
   />
   return (
     <main className="relative min-h-screen bg-black text-white">

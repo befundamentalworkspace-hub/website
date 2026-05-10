@@ -10,6 +10,7 @@ export default function SEO({
   image = DEFAULT_IMAGE,
   type = "website",
   noindex = false,
+  schema = null,
 }) {
   const canonicalUrl = `${SITE_URL}${path}`;
 
@@ -18,7 +19,10 @@ export default function SEO({
       <title>{title}</title>
 
       <meta name="description" content={description} />
-      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+      <meta
+        name="robots"
+        content={noindex ? "noindex, nofollow" : "index, follow"}
+      />
 
       <link rel="canonical" href={canonicalUrl} />
 
@@ -33,6 +37,12 @@ export default function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
     </Helmet>
   );
 }

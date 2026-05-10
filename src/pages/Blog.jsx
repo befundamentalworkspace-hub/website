@@ -10,6 +10,23 @@ export default function Blog() {
       title="Blog || Doctor Marketing, Clinic SEO & Patient Acquisition"
       description="Read Fundamental.co insights on doctor marketing, clinic SEO, patient acquisition, trust-building, and conversion systems."
       path="/blog"
+      schema={{
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Fundamental.co Blog",
+    url: "https://website-navy-alpha-71.vercel.app/blog",
+    description:
+      "Insights on doctor marketing, clinic SEO, patient acquisition, trust-building, and conversion systems.",
+    publisher: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://website-navy-alpha-71.vercel.app/fundamental-mark.png",
+      },
+    },
+  }}
     />
   </>
   

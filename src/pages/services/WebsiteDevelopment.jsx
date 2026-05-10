@@ -75,6 +75,27 @@ export default function WebsiteDevelopment()
       title="Website Development for Doctors| Fundamental.co"
       description="Premium clinic websites built to convert patient attention into trusted enquiries and consultation requests."
       path="/services/website-development"
+      schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Website Development for Doctors",
+    serviceType: "Healthcare Website Development",
+    provider: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Doctors and clinics",
+    },
+    description:
+      "Premium clinic websites built to convert patient attention into trusted enquiries and consultation requests.",
+  }}
     />
   </>
   return (

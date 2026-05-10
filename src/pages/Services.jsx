@@ -13,6 +13,79 @@ export default function Services() {
         title="Our Services | Fundamental.co"
         description="Explore our specialized services designed to help doctor-led clinics in India increase visibility, build trust, and convert consultations. From SEO and website development to performance marketing and pipeline optimization, we offer comprehensive solutions tailored for the healthcare industry."
         path="/services"
+         schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Marketing and Conversion Systems for Doctors",
+    serviceType: "Doctor and Clinic Marketing Services",
+    provider: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+      logo: "https://website-navy-alpha-71.vercel.app/fundamental-mark.png",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Doctors, clinics, aesthetic clinics, hospitals, and healthcare businesses",
+    },
+    description:
+      "Fundamental.co builds SEO, websites, social media, performance marketing, and conversion systems for doctor-led clinics.",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Fundamental.co Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "SEO for Doctors",
+            description:
+              "SEO systems for doctor-led clinics that want to capture high-intent patients searching on Google.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Website Development for Doctors",
+            description:
+              "Clinic websites built to convert patient attention into trusted enquiries and consultation requests.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Performance Marketing for Doctors",
+            description:
+              "Paid advertising and retargeting systems for clinics that want better patient quality, not just more leads.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Social Media Marketing for Doctors",
+            description:
+              "Social media systems that build doctor authority, trust, and patient confidence.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Clinic Pipeline Optimization",
+            description:
+              "Diagnosis and optimization of the stages where clinics lose enquiries, follow-up, consultations, and revenue.",
+          },
+        },
+      ],
+    },
+  }}
       />
     <main className="relative min-h-screen bg-black text-white">
       <BackgroundTexture />

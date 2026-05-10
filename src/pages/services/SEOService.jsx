@@ -74,6 +74,27 @@ export default function SEOService()
       title="SEO for Doctors & Clinics in India | Fundamental.co"
       description="SEO systems for doctor-led clinics that want to capture high-intent patients searching on Google."
       path="/services/seo"
+      schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "SEO for Doctors and Clinics",
+    serviceType: "Healthcare SEO",
+    provider: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Doctors and clinics",
+    },
+    description:
+      "SEO systems for doctor-led clinics that want to capture high-intent patients searching on Google.",
+  }}
     />
   </>
   return (

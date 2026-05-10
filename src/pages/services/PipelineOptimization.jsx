@@ -72,6 +72,27 @@ export default function PipelineOptimization() {
     title="Clinic Pipeline Optimization| Fundamental.co"
     description="Diagnose and fix the stages where clinics lose enquiries, follow-up, consultations, and revenue."
     path="/services/pipeline-optimization"
+    schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Clinic Pipeline Optimization",
+    serviceType: "Clinic Funnel and Conversion Optimization",
+    provider: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Doctors and clinics",
+    },
+    description:
+      "Diagnose and fix the stages where clinics lose enquiries, follow-up, consultations, and revenue.",
+  }}
   />
   return (
     <main className="relative min-h-screen bg-black text-white">

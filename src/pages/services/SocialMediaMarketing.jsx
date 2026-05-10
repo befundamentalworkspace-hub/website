@@ -74,6 +74,27 @@ export default function SocialMediaMarketing()
       title="Social Media Marketing for Doctors| Fundamental.co"
       description="Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue."
       path="/services/social-media-marketing"
+      schema={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Social Media Marketing for Doctors",
+    serviceType: "Healthcare Social Media Marketing",
+    provider: {
+      "@type": "Organization",
+      name: "Fundamental.co",
+      url: "https://website-navy-alpha-71.vercel.app/",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Doctors and clinics",
+    },
+    description:
+      "Build doctor authority and clinic trust through strategic social media content designed to support consultation demand.",
+  }}
     />
   </>
   return (
