@@ -132,14 +132,14 @@ export default function About() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About Fundamental.co",
-    url: "https://website-navy-alpha-71.vercel.app/about",
+    url: "https://justfundamental.com/about",
     description:
       "Fundamental.co was built to help doctor-led clinics become trusted, differentiated, and chosen before the consultation.",
     mainEntity: {
       "@type": "Organization",
       name: "Fundamental.co",
-      url: "https://website-navy-alpha-71.vercel.app/",
-      logo: "https://website-navy-alpha-71.vercel.app/fundamental-mark.png",
+      url: "https://justfundamental.com/",
+      logo: "https://justfundamental.com/fundamental-mark.png",
       founder: {
         "@type": "Person",
         name: "Vikas Pandey",

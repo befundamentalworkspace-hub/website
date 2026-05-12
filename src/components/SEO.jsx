@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const SITE_URL = "https://website-navy-alpha-71.vercel.app";
+const SITE_URL = "https://justfundamental.com";
 const DEFAULT_IMAGE = `${SITE_URL}/fundamental-og-image.png`;
 
 export default function SEO({

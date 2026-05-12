@@ -31,7 +31,7 @@ export default function BlogPost() {
         "Read Fundamental.co insights on doctor marketing, clinic SEO, patient acquisition, and conversion systems.",
       image:
         post.featured_image_url ||
-        "https://website-navy-alpha-71.vercel.app/fundamental-og-image.png",
+        "https://justfundamental.com/fundamental-og-image.png",
       author: {
         "@type": "Organization",
         name: post.author || "Fundamental.co",
@@ -41,14 +41,14 @@ export default function BlogPost() {
         name: "Fundamental.co",
         logo: {
           "@type": "ImageObject",
-          url: "https://website-navy-alpha-71.vercel.app/fundamental-mark.png",
+          url: "https://justfundamental.com/fundamental-mark.png",
         },
       },
       datePublished: post.published_at || post.created_at,
       dateModified: post.updated_at || post.published_at || post.created_at,
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `https://website-navy-alpha-71.vercel.app/blog/${post.slug}`,
+        "@id": `https://justfundamental.com/blog/${post.slug}`,
       },
     }
   : null;
@@ -219,7 +219,7 @@ export default function BlogPost() {
           path={`/blog/${post.slug}`}
           image={
             post.featured_image_url ||
-            "https://website-navy-alpha-71.vercel.app/fundamental-og-image.png"
+            "https://justfundamental.com/fundamental-og-image.png"
           }
           type="article"
           schema={blogPostSchema}

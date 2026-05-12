@@ -80,7 +80,7 @@ export default function RequestAudit() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Request a Pipeline Audit",
-    url: "https://website-navy-alpha-71.vercel.app/request-audit",
+    url: "https://justfundamental.com/request-audit",
     description:
       "Request a Fundamental.co Pipeline Audit to find where your clinic is losing trust, enquiries, consultations, and revenue.",
     mainEntity: {
@@ -90,7 +90,7 @@ export default function RequestAudit() {
       provider: {
         "@type": "Organization",
         name: "Fundamental.co",
-        url: "https://website-navy-alpha-71.vercel.app/",
+        url: "https://justfundamental.com/",
         email: "befundamentalworkspace@gmail.com",
         telephone: "+91-90828211893",
       },

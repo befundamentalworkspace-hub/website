@@ -22,8 +22,8 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Fundamental.co",
-    url: "https://website-navy-alpha-71.vercel.app/",
-    logo: "https://website-navy-alpha-71.vercel.app/fundamental-mark.png",
+    url: "https://justfundamental.com/",
+    logo: "https://justfundamental.com/fundamental-mark.png",
     description:
       "Fundamental.co helps doctor-led clinics turn visibility into trusted consultations through SEO, websites, performance marketing, and conversion systems.",
     email: "befundamentalworkspace@gmail.com",

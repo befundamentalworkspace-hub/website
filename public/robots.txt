@@ -31,4 +31,4 @@ Allow: /blog/
 Allow: /our-clients
 Allow: /request-audit
 
-Sitemap: https://website-navy-alpha-71.vercel.app/sitemap.xml
+Sitemap: https://justfundamental.com/sitemap.xml

@@ -11,13 +11,13 @@ export default function OurClients() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Our Clients",
-    url: "https://website-navy-alpha-71.vercel.app/our-clients",
+    url: "https://justfundamental.com/our-clients",
     description:
       "Clinics, doctors, and healthcare businesses supported by Fundamental.co through marketing and conversion systems.",
     publisher: {
       "@type": "Organization",
       name: "Fundamental.co",
-      url: "https://website-navy-alpha-71.vercel.app/",
+      url: "https://justfundamental.com/",
     },
   }}
       />

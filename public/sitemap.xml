@@ -4,74 +4,74 @@
 
   <!-- Core public pages -->
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/</loc>
+    <loc>https://justfundamental.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/about</loc>
+    <loc>https://justfundamental.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/services</loc>
+    <loc>https://justfundamental.com/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/results</loc>
+    <loc>https://justfundamental.com/results</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/our-clients</loc>
+    <loc>https://justfundamental.com/our-clients</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/blog</loc>
+    <loc>https://justfundamental.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/request-audit</loc>
+    <loc>https://justfundamental.com/request-audit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Service SEO pages -->
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/services/social-media-marketing</loc>
+    <loc>https://justfundamental.com/services/social-media-marketing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/services/seo</loc>
+    <loc>https://justfundamental.com/services/seo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/services/website-development</loc>
+    <loc>https://justfundamental.com/services/website-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/services/performance-marketing</loc>
+    <loc>https://justfundamental.com/services/performance-marketing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://website-navy-alpha-71.vercel.app/services/pipeline-optimization</loc>
+    <loc>https://justfundamental.com/services/pipeline-optimization</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

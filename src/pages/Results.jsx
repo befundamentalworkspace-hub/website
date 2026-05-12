@@ -11,13 +11,13 @@ export default function Results() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Clinic Marketing Results",
-    url: "https://website-navy-alpha-71.vercel.app/results",
+    url: "https://justfundamental.com/results",
     description:
       "Clinic marketing audits, case studies, and growth system examples from Fundamental.co.",
     publisher: {
       "@type": "Organization",
       name: "Fundamental.co",
-      url: "https://website-navy-alpha-71.vercel.app/",
+      url: "https://justfundamental.com/",
     },
   }}
       />

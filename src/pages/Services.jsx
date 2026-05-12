@@ -21,8 +21,8 @@ export default function Services() {
     provider: {
       "@type": "Organization",
       name: "Fundamental.co",
-      url: "https://website-navy-alpha-71.vercel.app/",
-      logo: "https://website-navy-alpha-71.vercel.app/fundamental-mark.png",
+      url: "https://justfundamental.com/",
+      logo: "https://justfundamental.com/fundamental-mark.png",
     },
     areaServed: {
       "@type": "Country",
