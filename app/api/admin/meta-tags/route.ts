@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { isAdminConfigured, isAdminRequest } from "@/lib/adminAuth";
+import { getAdminConfigError, isAdminConfigured, isAdminRequest } from "@/lib/adminAuth";
 import { getServerSupabaseKey, supabaseRest } from "@/lib/supabaseRest";
 
 type MetaTagUpdate = {
@@ -61,7 +61,7 @@ export async function PATCH(request: Request) {
 
 function guardAdminRequest() {
   if (!isAdminConfigured()) {
-    return NextResponse.json({ error: "Admin token is not configured." }, { status: 500 });
+    return NextResponse.json({ error: getAdminConfigError() }, { status: 500 });
   }
 
   if (!getServerSupabaseKey()) {

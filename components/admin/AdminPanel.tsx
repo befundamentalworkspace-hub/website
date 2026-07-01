@@ -89,7 +89,8 @@ const auditStatuses: AuditStatus[] = ["new", "reviewed", "contacted", "qualified
 const blogStatuses: BlogStatus[] = ["draft", "published", "archived"];
 
 export function AdminPanel({ view, postId }: { view: AdminView; postId?: string }) {
-  const [token, setToken] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
@@ -115,16 +116,18 @@ export function AdminPanel({ view, postId }: { view: AdminView; postId?: string 
     const response = await fetch("/api/admin/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token })
+      body: JSON.stringify({ username, password })
     });
 
     if (!response.ok) {
+      const body = (await response.json().catch(() => ({}))) as { error?: string };
       setLoading(false);
-      setMessage("The admin token was not accepted.");
+      setMessage(body.error ?? "The admin credentials were not accepted.");
       return;
     }
 
-    setToken("");
+    setUsername("");
+    setPassword("");
     await loadCurrentView();
   }
 
@@ -225,16 +228,28 @@ export function AdminPanel({ view, postId }: { view: AdminView; postId?: string 
           <p className="section-label">Fundamental Admin</p>
           <h1 className="display-text mt-3 text-5xl text-ink">Sign in.</h1>
           <p className="mt-4 text-sm leading-6 text-body">
-            Enter the admin token to manage audit requests, blog posts, and page metadata.
+            Enter the admin credentials to manage audit requests, blog posts, and page metadata.
           </p>
-          <label className="mt-6 block" htmlFor="admin-token">
-            <span className="mb-2 block text-sm font-semibold text-primary">Admin token</span>
+          <label className="mt-6 block" htmlFor="admin-username">
+            <span className="mb-2 block text-sm font-semibold text-primary">Username or email</span>
             <input
-              id="admin-token"
+              id="admin-username"
+              autoComplete="username"
+              className="min-h-12 w-full rounded-2xl border border-hairline bg-canvas-soft px-4 text-primary outline-none transition focus:border-primary focus:bg-white"
+              type="text"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+          </label>
+          <label className="mt-4 block" htmlFor="admin-password">
+            <span className="mb-2 block text-sm font-semibold text-primary">Password</span>
+            <input
+              id="admin-password"
+              autoComplete="current-password"
               className="min-h-12 w-full rounded-2xl border border-hairline bg-canvas-soft px-4 text-primary outline-none transition focus:border-primary focus:bg-white"
               type="password"
-              value={token}
-              onChange={(event) => setToken(event.target.value)}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
             />
           </label>
           {message ? <p className="mt-4 text-sm text-red-700">{message}</p> : null}

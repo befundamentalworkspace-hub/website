@@ -22,7 +22,8 @@ type DraftMeta = {
 };
 
 export function MetaTagsAdmin() {
-  const [token, setToken] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [posts, setPosts] = useState<BlogPostMeta[]>([]);
   const [drafts, setDrafts] = useState<Record<string, DraftMeta>>({});
@@ -42,16 +43,18 @@ export function MetaTagsAdmin() {
     const response = await fetch("/api/admin/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token })
+      body: JSON.stringify({ username, password })
     });
 
     if (!response.ok) {
+      const body = (await response.json().catch(() => ({}))) as { error?: string };
       setLoading(false);
-      setMessage("The admin token was not accepted.");
+      setMessage(body.error ?? "The admin credentials were not accepted.");
       return;
     }
 
-    setToken("");
+    setUsername("");
+    setPassword("");
     await loadPosts();
   }
 
@@ -126,15 +129,25 @@ export function MetaTagsAdmin() {
       <form className="max-w-md rounded-panel border border-hairline bg-card p-6 shadow-soft" onSubmit={login}>
         <h1 className="display-text text-4xl text-ink">Meta tag admin</h1>
         <p className="mt-3 text-sm leading-6 text-body">
-          Enter the admin token to edit blog SEO title, description, and keywords.
+          Enter the admin credentials to edit blog SEO title, description, and keywords.
         </p>
         <Input
           className="mt-6"
-          label="Admin token"
-          name="adminToken"
+          label="Username or email"
+          name="adminUsername"
+          type="text"
+          value={username}
+          autoComplete="username"
+          onChange={(event) => setUsername(event.target.value)}
+        />
+        <Input
+          className="mt-4"
+          label="Password"
+          name="adminPassword"
           type="password"
-          value={token}
-          onChange={(event) => setToken(event.target.value)}
+          value={password}
+          autoComplete="current-password"
+          onChange={(event) => setPassword(event.target.value)}
         />
         {message ? <p className="mt-4 text-sm text-red-700">{message}</p> : null}
         <Button className="mt-5" type="submit" disabled={loading}>

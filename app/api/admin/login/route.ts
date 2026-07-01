@@ -1,15 +1,26 @@
 import { NextResponse } from "next/server";
-import { ADMIN_SESSION_COOKIE, getAdminSessionValue, isAdminConfigured } from "@/lib/adminAuth";
+import {
+  ADMIN_SESSION_COOKIE,
+  getAdminConfigError,
+  getAdminSessionMaxAge,
+  getAdminSessionValue,
+  isAdminConfigured,
+  verifyAdminCredentials
+} from "@/lib/adminAuth";
 
 export async function POST(request: Request) {
   if (!isAdminConfigured()) {
-    return NextResponse.json({ error: "Admin token is not configured." }, { status: 500 });
+    return NextResponse.json({ error: getAdminConfigError() }, { status: 500 });
   }
 
-  const body = (await request.json().catch(() => null)) as { token?: string } | null;
+  const body = (await request.json().catch(() => null)) as {
+    username?: string;
+    password?: string;
+    token?: string;
+  } | null;
 
-  if (!body?.token || body.token !== process.env.ADMIN_PANEL_TOKEN) {
-    return NextResponse.json({ error: "Invalid admin token." }, { status: 401 });
+  if (!body || !verifyAdminCredentials(body)) {
+    return NextResponse.json({ error: "Invalid admin credentials." }, { status: 401 });
   }
 
   const response = NextResponse.json({ ok: true });
@@ -18,7 +29,7 @@ export async function POST(request: Request) {
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
     path: "/",
-    maxAge: 60 * 60 * 8
+    maxAge: getAdminSessionMaxAge()
   });
 
   return response;
