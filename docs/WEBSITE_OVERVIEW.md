@@ -329,8 +329,9 @@ Important columns:
 
 Current app authentication:
 
-- The implemented admin login uses `ADMIN_PANEL_TOKEN` from environment variables.
-- The `admin_users` table is not the active login mechanism yet.
+- The implemented admin login can use Supabase Auth when `ADMIN_AUTH_PROVIDER=supabase`.
+- In Supabase mode, the user's email/password are verified by Supabase Auth.
+- Access is then limited to active emails in the `admin_users` table, unless `ADMIN_EMAILS` is set as an env allowlist.
 
 ## 5. Environment Variables
 
@@ -352,7 +353,8 @@ Required variables:
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_publishable_or_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_server_only_service_role_or_secret_key
-ADMIN_PANEL_TOKEN=choose_a_long_private_admin_token
+ADMIN_AUTH_PROVIDER=supabase
+ADMIN_SESSION_SECRET=choose_a_long_random_session_signing_secret
 NEXT_PUBLIC_BUSINESS_EMAIL=hello@justfundamental.com
 NEXT_PUBLIC_BUSINESS_PHONE=+91 9082811893
 NEXT_PUBLIC_BUSINESS_WHATSAPP=https://wa.me/919082811893
@@ -583,15 +585,16 @@ PATCH /api/admin/meta-tags
 
 ## 9. Admin Authentication
 
-Current admin login is token-based.
+Current admin login supports Supabase-backed authentication.
 
 Flow:
 
-1. Admin enters the token.
-2. `POST /api/admin/login` checks it against `ADMIN_PANEL_TOKEN`.
-3. If valid, the app sets an HTTP-only cookie.
-4. Admin API routes check the cookie before serving data.
-5. `POST /api/admin/logout` clears the cookie.
+1. Admin enters their Supabase Auth email and password.
+2. `POST /api/admin/login` verifies the credentials with Supabase Auth.
+3. The app checks that the authenticated email is active in `admin_users`, or is listed in `ADMIN_EMAILS`.
+4. If valid, the app sets an HTTP-only cookie.
+5. Admin API routes check the cookie before serving data.
+6. `POST /api/admin/logout` clears the cookie.
 
 Cookie name:
 
@@ -601,7 +604,7 @@ fundamental_admin_session
 
 Important security notes:
 
-- The admin token should be long and private.
+- `ADMIN_SESSION_SECRET` should be long and private.
 - The Supabase secret/service key is only used in server-side admin API routes.
 - The private Supabase key is never exposed to browser code.
 - Admin pages are marked `robots: noindex`.

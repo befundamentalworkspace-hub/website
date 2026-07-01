@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     token?: string;
   } | null;
 
-  if (!body || !verifyAdminCredentials(body)) {
+  if (!body || !(await verifyAdminCredentials(body))) {
     return NextResponse.json({ error: "Invalid admin credentials." }, { status: 401 });
   }
 
