@@ -296,6 +296,95 @@ export const clientCategories = [
   "Service businesses"
 ];
 
+export const clientProofCards = [
+  {
+    name: "Dhyeya IAS",
+    logo: "/clients/dhyeya-ias.jpg",
+    logoAlt: "Dhyeya IAS logo",
+    logoFrameClass: "bg-[#062f68]",
+    headline: "Building trust for an education-first brand",
+    businessType: "IAS / competitive exam education institute",
+    problem: "The institute needed clearer communication to build trust with students and parents before enquiry.",
+    fixed:
+      "Created structured marketing communication, credibility-led content direction, and campaign assets focused on student confidence.",
+    pipeline: "Attention -> Trust -> Enquiry",
+    outcome: "Clearer positioning for student and parent decision-making before admission enquiry.",
+    verification: "Work samples available on request"
+  },
+  {
+    name: "KRSMA Indian Cuisine",
+    logo: "/clients/krsma-indian-cuisine.png",
+    logoAlt: "KRSMA Indian Cuisine logo",
+    logoFrameClass: "bg-black",
+    headline: "Turning food discovery into customer interest",
+    businessType: "Restaurant / Indian cuisine brand",
+    problem:
+      "The restaurant needed stronger visibility, better customer recall, and a clearer reason for people to choose it over nearby dining options.",
+    fixed:
+      "Created food-focused creatives, promotional content, and brand communication designed to increase attention and visit intent.",
+    pipeline: "Attention -> Interest -> Visit Intent",
+    outcome: "Stronger digital presence for customer discovery and restaurant consideration.",
+    verification: "Creative assets available on request"
+  },
+  {
+    name: "Pain Machine",
+    logo: "/clients/pain-machine.jpg",
+    logoAlt: "Pain Machine logo",
+    logoFrameClass: "bg-black",
+    headline: "Building stronger recall for a gym brand",
+    businessType: "Gym / fitness centre",
+    problem: "The gym needed sharper local visibility and stronger brand recall in a competitive fitness market.",
+    fixed:
+      "Created bold fitness-focused creatives, campaign communication, and content direction built around strength, discipline, transformation, and local attention.",
+    pipeline: "Attention -> Recall -> Enquiry",
+    outcome: "Clearer brand presence for potential gym members and stronger local attention.",
+    verification: "Creative assets available on request"
+  },
+  {
+    name: "Dr. Bhatt's Vardaan Clinic",
+    logo: "/clients/vardaan-clinic.png",
+    logoAlt: "Dr. Bhatt's Vardaan Clinic logo",
+    logoFrameClass: "bg-white",
+    headline: "Building patient trust before consultation",
+    businessType: "Doctor-led clinic / healthcare practice",
+    problem:
+      "The clinic needed patient-facing communication that made the doctor's expertise easier to understand and trust.",
+    fixed:
+      "Created healthcare marketing assets focused on doctor authority, service clarity, patient education, and enquiry readiness.",
+    pipeline: "Trust -> Enquiry -> Consultation",
+    outcome: "Cleaner path from patient interest to clinic enquiry and consultation consideration.",
+    verification: "Client details shared with permission only"
+  },
+  {
+    name: "The Wrinkle Wrangler",
+    logo: "/clients/wrinkle-wrangler.png",
+    logoAlt: "The Wrinkle Wrangler logo",
+    logoFrameClass: "bg-[#17120f]",
+    headline: "Positioning an aesthetic brand around trust",
+    businessType: "Aesthetic / beauty / anti-ageing brand",
+    problem:
+      "The brand needed premium communication that could make aesthetic services feel more credible, desirable, and consultation-worthy.",
+    fixed: "Built messaging and creative direction around transformation, trust, confidence, and service clarity.",
+    pipeline: "Attention -> Trust -> Enquiry",
+    outcome:
+      "More credible and desirable service communication without relying on generic or discount-led messaging.",
+    verification: "Campaign assets available on request"
+  },
+  {
+    name: "Bathla",
+    logo: "/clients/bathla.jpg",
+    logoAlt: "Bathla logo",
+    logoFrameClass: "bg-[#ff5208]",
+    headline: "Strengthening communication for a consumer brand",
+    businessType: "Consumer lifestyle / home utility brand",
+    problem: "The brand needed clearer marketing communication to support visibility, trust, and customer consideration.",
+    fixed: "Created structured campaign messaging, product-focused communication, and customer-facing content.",
+    pipeline: "Attention -> Trust -> Consideration",
+    outcome: "Cleaner communication for customer understanding, recall, and decision-making.",
+    verification: "Project details available on request"
+  }
+] as const;
+
 export const faqs = [
   {
     question: "What happens after I request an audit?",
